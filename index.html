@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Engineering Blueprint of Sinchana GR — Electronics & Communication Engineering Portfolio. Specializing in IoT Systems, Sensors, Automation, Python, and C programming.">
+    <title>Sinchana GR — Engineering Blueprint</title>
+    <!-- Blueprint Engineering Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ========================================================= -->
+    <!-- BLUEPRINT MASTHEAD & TECHNICAL DRAFTING NAVIGATION       -->
+    <!-- ========================================================= -->
+    <header id="header">
+        <!-- Technical Schematic Top Ticker Bar -->
+        <div class="masthead-topbar">
+            <span>DWG NO: <strong>ECE-2026-SGR-01</strong></span>
+            <span>SYSTEMS: <strong>ELECTRONICS &bull; IOT &bull; SENSORS</strong></span>
+            <span>COORDINATES: <strong>CHANNAGIRI, KA // 14°01'N 75°55'E</strong></span>
+        </div>
+
+        <nav aria-label="Main Technical Navigation">
+            <div class="logo">
+                <a href="#hero">
+                    <span class="logo-crosshair" aria-hidden="true">&#x253C;</span>
+                    <span class="logo-brand">Sinchana GR</span>
+                    <span class="logo-edition">DWG &bull; REV-01</span>
+                </a>
+            </div>
+
+            <!-- RESPONSIVE BLUEPRINT VERTICAL NAVBAR DRAWER -->
+            <div id="vertical-nav-drawer" class="vertical-nav-drawer" aria-label="Blueprint Navigation">
+                
+                <!-- Drawer Header -->
+                <div class="vertical-nav-header">
+                    <span class="mono-meta">SCHEMATIC INDEX // NAV</span>
+                    <button id="vertical-nav-close" class="vertical-nav-close-btn" type="button" aria-label="Close Schematic Menu">&times;</button>
+                </div>
+
+                <!-- Numbered Drafting Nav Links -->
+                <ul class="nav-links">
+                    <li><a href="#about"><span class="nav-idx">[01]</span> Spec</a></li>
+                    <li><a href="#skills"><span class="nav-idx">[02]</span> Capabilities</a></li>
+                    <li><a href="#timeline"><span class="nav-idx">[03]</span> Chronology</a></li>
+                    <li><a href="#projects"><span class="nav-idx">[04]</span> Prototypes</a></li>
+                    <li><a href="#strengths"><span class="nav-idx">[05]</span> Attributes</a></li>
+                    <li><a href="#contact"><span class="nav-idx">[06]</span> Dispatch</a></li>
+                </ul>
+
+                <!-- Drawer Footer -->
+                <div class="vertical-nav-footer">
+                    <a href="Sinchana_GR_Resume-1.pdf" class="btn-editorial btn-editorial-outline" download="Sinchana_GR_Resume.pdf">
+                        Spec Sheet / CV &darr;
+                    </a>
+                    <span class="vertical-nav-loc">CHANNAGIRI, KARNATAKA, IN</span>
+                </div>
+            </div>
+
+            <!-- Header Controls: Blueprint Theme Toggle & Hamburger -->
+            <div class="header-controls">
+                <!-- Theme Toggle: Cyanotype (Dark) / Diazo (Light) -->
+                <button 
+                    id="theme-toggle" 
+                    class="blueprint-toggle-btn"
+                    type="button" 
+                    aria-label="Toggle Blueprint Mode" 
+                    aria-pressed="false"
+                    title="Toggle Cyanotype (Dark) / Diazo (Light) Blueprint Theme">
+                    <span class="theme-icon" aria-hidden="true">📐</span>
+                    <span class="theme-text">Cyanotype</span>
+                </button>
+
+                <!-- Mobile Hamburger Toggle Button -->
+                <button 
+                    id="mobile-nav-toggle" 
+                    class="mobile-nav-toggle" 
+                    type="button" 
+                    aria-label="Toggle Schematic Navigation" 
+                    aria-expanded="false" 
+                    aria-controls="vertical-nav-drawer">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Backdrop Overlay -->
+    <div id="nav-backdrop" class="nav-backdrop" aria-hidden="true"></div>
+
+    <!-- ========================================================= -->
+    <!-- MAIN BLUEPRINT DRAFTING CANVAS                            -->
+    <!-- ========================================================= -->
+    <main>
+
+        <!-- ===================================================== -->
+        <!-- 1. HERO SECTION: ENGINEERING BLUEPRINT SPECIFICATION  -->
+        <!-- ===================================================== -->
+        <section id="hero" aria-labelledby="hero-heading">
+            <div class="hero-editorial-container">
+                
+                <!-- LEFT COLUMN: ENGINEERING TITLE BLOCK & SPECIFICATIONS -->
+                <div class="hero-content-column">
+                    <!-- Technical Stamp -->
+                    <div class="bp-stamp-box">
+                        <span class="bp-stamp-code">SPEC: ECE-SGR-2026</span>
+                        <span class="bp-stamp-status">VERIFIED // ACTIVE</span>
+                    </div>
+                    
+                    <h1 id="hero-heading" class="hero-main-title">
+                        Engineering Schematic
+                        <span class="name-highlight">Sinchana GR</span>
+                    </h1>
+
+                    <p class="hero-editorial-tagline">
+                        Electronics &amp; Communication Engineering &bull; IoT &amp; Embedded Systems
+                    </p>
+
+                    <p class="hero-editorial-bio">
+                        Merging sensor instrumentation with microcontrollers and intelligent automation. 
+                        Focusing on closed-loop feedback systems, hardware circuit integration, and procedural code execution in Python &amp; C.
+                    </p>
+
+                    <!-- CAD Blueprint Specification Table / Title Block -->
+                    <div class="bp-title-block">
+                        <div class="bp-tb-cell">
+                            <span class="bp-tb-label">DISCIPLINE</span>
+                            <span class="bp-tb-val">B.E. (ECE)</span>
+                        </div>
+                        <div class="bp-tb-cell">
+                            <span class="bp-tb-label">EVALUATION</span>
+                            <span class="bp-tb-val">CGPA 7.8 // AIT</span>
+                        </div>
+                        <div class="bp-tb-cell">
+                            <span class="bp-tb-label">PRIMARY CORE</span>
+                            <span class="bp-tb-val">IoT &bull; SENSORS</span>
+                        </div>
+                    </div>
+
+                    <!-- CAD Action Buttons -->
+                    <div class="hero-action-row">
+                        <a href="#projects" class="btn-editorial btn-editorial-primary">
+                            <span>&#x25B6;</span> View Prototypes
+                        </a>
+                        <a href="#contact" class="btn-editorial btn-editorial-secondary">
+                            Dispatch Inquiries
+                        </a>
+                        <a href="Sinchana_GR_Resume-1.pdf" class="btn-editorial btn-editorial-outline" download="Sinchana_GR_Resume.pdf">
+                            <span>&#x2193;</span> Spec Sheet / CV
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: SCHEMATIC POP-OUT PHOTO STAGE -->
+                <div class="hero-photo-column">
+                    <div class="layered-popout-stage" aria-label="Layered Blueprint Schematic Frame">
+                        
+                        <!-- Layer 1: Base Drafting Sheet (Tilted) -->
+                        <div class="card-layer-back" aria-hidden="true"></div>
+
+                        <!-- Layer 2: Intermediate Circuit Schematic Overlay -->
+                        <div class="card-layer-middle" aria-hidden="true"></div>
+
+                        <!-- Layer 3: Main Front Drafting Spec Board -->
+                        <div class="card-layer-front">
+                            
+                            <!-- Floating Technical Badges -->
+                            <div class="floating-badge badge-top-left">
+                                <span>&#x253C;</span> ECE // 2026
+                            </div>
+                            <div class="floating-badge badge-bottom-right">
+                                <span>&#x2713;</span> CGPA 7.8
+                            </div>
+
+                            <!-- POP-OUT PHOTO COMPONENT (CAD Schematic Pop-Out) -->
+                            <div class="popout-photo-wrapper">
+                                <!-- Architectural CAD Backdrop Arch -->
+                                <div class="popout-arch-frame"></div>
+
+                                <!-- Portrait Image Popping Out Above the Drafting Frame -->
+                                <img 
+                                    src="WhatsApp Image 2026-10-06 at 2.14.35 PM.jpeg" 
+                                    alt="Engineering Portrait of Sinchana GR" 
+                                    class="popout-subject-image"
+                                    width="260"
+                                    height="375">
+                            </div>
+
+                            <!-- Front Drafting Board Meta Panel -->
+                            <div class="front-card-details">
+                                <div class="card-subject-name">
+                                    <span>Sinchana GR</span>
+                                    <span class="bp-spec">[LEAD ENG.]</span>
+                                </div>
+                                <p class="card-subject-title">Adichunchanagiri Institute of Technology (AIT)</p>
+                                <div class="card-spec-tags">
+                                    <span class="card-spec-pill">IoT Protocol</span>
+                                    <span class="card-spec-pill">Python 3.x</span>
+                                    <span class="card-spec-pill">C Embedded</span>
+                                    <span class="card-spec-pill">Automation</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 2. ABOUT SECTION: TECHNICAL SPECIFICATION SHEET       -->
+        <!-- ===================================================== -->
+        <section id="about" aria-labelledby="about-heading">
+            <div class="section-editorial-header">
+                <span class="section-num">[ 01 // SPECIFICATION ]</span>
+                <h2 id="about-heading" class="section-title">Engineering Objective &amp; Profile</h2>
+                <p class="section-subtitle">Core career objectives, linguistic competencies, and personal pursuits.</p>
+            </div>
+
+            <div class="about-editorial-grid">
+                <!-- Main Spec Card -->
+                <article class="editorial-card-layered">
+                    <h3>Career Objective &amp; Philosophy</h3>
+                    <p>
+                        Motivated Electronics and Communication Engineering student with an interest in electronics, 
+                        programming, and IoT-based technologies. Seeking opportunities to develop technical and practical skills, 
+                        gain industry experience, and contribute to real-world engineering projects while continuously learning and improving.
+                    </p>
+                    <p>
+                        Focused on bridging physical sensor networks with firmware intelligence, ensuring responsive, 
+                        energy-efficient, and mathematically calibrated hardware operations.
+                    </p>
+                </article>
+
+                <!-- Auxiliary Spec Deck -->
+                <aside class="about-side-stack">
+                    <div class="side-card">
+                        <h4><span>&#x25C7;</span> Languages Known</h4>
+                        <ul>
+                            <li><strong>Kannada</strong> &ndash; Native / Fluent</li>
+                            <li><strong>English</strong> &ndash; Professional / Fluent</li>
+                        </ul>
+                    </div>
+
+                    <div class="side-card">
+                        <h4><span>&#x25C7;</span> Hobbies &amp; Pursuits</h4>
+                        <ul>
+                            <li>Dancing &amp; Choreography</li>
+                            <li>Singing &amp; Vocal Arts</li>
+                            <li>Listening to Music</li>
+                            <li>Gardening &amp; Nature</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 3. TECHNICAL SKILLS: PCB & SCHEMATIC CAPABILITIES     -->
+        <!-- ===================================================== -->
+        <section id="skills" aria-labelledby="skills-heading">
+            <div class="section-editorial-header">
+                <span class="section-num">[ 02 // CAPABILITIES ]</span>
+                <h2 id="skills-heading" class="section-title">Technical Capabilities</h2>
+                <p class="section-subtitle">Documented proficiencies in procedural programming and circuit hardware.</p>
+            </div>
+
+            <div class="skills-editorial-deck">
+                <!-- Deck Card 1: Software & Logic -->
+                <article class="skill-card-deck">
+                    <span class="skill-deck-tag">SPEC // 01 &bull; PROGRAMMING LOGIC</span>
+                    <h3>Programming</h3>
+                    <ul class="skill-list-editorial">
+                        <li>
+                            <span>C Programming</span>
+                            <strong>Procedural &amp; Embedded</strong>
+                        </li>
+                        <li>
+                            <span>Python</span>
+                            <strong>Automation &amp; Scripting</strong>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Deck Card 2: Hardware & Embedded -->
+                <article class="skill-card-deck">
+                    <span class="skill-deck-tag">SPEC // 02 &bull; HARDWARE &amp; SENSORS</span>
+                    <h3>Electronics &amp; IoT</h3>
+                    <ul class="skill-list-editorial">
+                        <li>
+                            <span>Basic IoT Concepts</span>
+                            <strong>Networked Nodes</strong>
+                        </li>
+                        <li>
+                            <span>Basic Electronics</span>
+                            <strong>Circuit Analysis</strong>
+                        </li>
+                        <li>
+                            <span>Sensor Instrumentation</span>
+                            <strong>Analog/Digital Capture</strong>
+                        </li>
+                        <li>
+                            <span>Automated Systems</span>
+                            <strong>Closed-Loop Feedback</strong>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 4. TIMELINE / EDUCATION: ACADEMIC RECORD DOSSIER      -->
+        <!-- ===================================================== -->
+        <section id="timeline" aria-labelledby="timeline-heading">
+            <div class="section-editorial-header">
+                <span class="section-num">[ 03 // CHRONOLOGY ]</span>
+                <h2 id="timeline-heading" class="section-title">Academic Record</h2>
+                <p class="section-subtitle">Chronological milestones across engineering, pre-university, and foundational education.</p>
+            </div>
+
+            <div class="timeline-deck-container">
+                <!-- Record 01 -->
+                <article class="timeline-deck-card">
+                    <div class="timeline-index-badge">01</div>
+                    <div class="timeline-content-body">
+                        <h3>Bachelor of Engineering (B.E.) &ndash; Electronics and Communication Engineering</h3>
+                        <p class="timeline-institution">Adichunchanagiri Institute of Technology (AIT), Chikkamagaluru</p>
+                    </div>
+                    <div class="timeline-score-stamp">
+                        CGPA 7.8
+                    </div>
+                </article>
+
+                <!-- Record 02 -->
+                <article class="timeline-deck-card">
+                    <div class="timeline-index-badge">02</div>
+                    <div class="timeline-content-body">
+                        <h3>Pre-University Course (12th Grade)</h3>
+                        <p class="timeline-institution">MBPU College, Davanagere</p>
+                    </div>
+                    <div class="timeline-score-stamp">
+                        80.0%
+                    </div>
+                </article>
+
+                <!-- Record 03 -->
+                <article class="timeline-deck-card">
+                    <div class="timeline-index-badge">03</div>
+                    <div class="timeline-content-body">
+                        <h3>SSLC (10th Grade)</h3>
+                        <p class="timeline-institution">Navachethana High School, Channagiri</p>
+                    </div>
+                    <div class="timeline-score-stamp">
+                        87.0%
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 5. PROJECTS SECTION: ENGINEERED PROTOTYPES            -->
+        <!-- ===================================================== -->
+        <section id="projects" aria-labelledby="projects-heading">
+            <div class="section-editorial-header">
+                <span class="section-num">[ 04 // PROTOTYPES ]</span>
+                <h2 id="projects-heading" class="section-title">Engineered Prototypes</h2>
+                <p class="section-subtitle">Physical systems and proof-of-concept hardware developed with IoT and sensor modules.</p>
+            </div>
+
+            <div class="projects-editorial-grid">
+                <!-- Prototype 1 -->
+                <article class="project-card-editorial">
+                    <div class="project-card-header">
+                        <span class="project-kicker">SCHEMATIC // IoT &bull; AUTOMATED IRRIGATION</span>
+                        <h3>Smart Irrigation Using IoT</h3>
+                    </div>
+
+                    <ul class="project-bullet-list">
+                        <li>IoT-based concept for real-time monitoring of soil moisture levels with automatic valve actuation.</li>
+                        <li>Designed to minimize water wastage through automated closed-loop sensor-driven threshold triggers.</li>
+                        <li>Gained hands-on practical understanding of sensor calibration, microcontroller pin interfacing, and automation logic.</li>
+                    </ul>
+
+                    <div class="project-pill-stack">
+                        <span class="project-pill">IoT Protocol</span>
+                        <span class="project-pill">Soil Moisture Sensor</span>
+                        <span class="project-pill">Automated Valve</span>
+                        <span class="project-pill">Water Conservation</span>
+                    </div>
+                </article>
+
+                <!-- Prototype 2 -->
+                <article class="project-card-editorial">
+                    <div class="project-card-header">
+                        <span class="project-kicker">SCHEMATIC // SENSORS &bull; HARDWARE</span>
+                        <h3>Distance Measurement</h3>
+                    </div>
+
+                    <ul class="project-bullet-list">
+                        <li>Engineered a system for accurate distance measurement using electronic sensors and hardware modules.</li>
+                        <li>Acquired practical knowledge of ultrasonic/infrared sensor characteristics and pulse signal capture.</li>
+                        <li>Calibrated circuitry for reliable, repeatable proximity and distance calculation.</li>
+                    </ul>
+
+                    <div class="project-pill-stack">
+                        <span class="project-pill">Distance Sensors</span>
+                        <span class="project-pill">Electronics Circuitry</span>
+                        <span class="project-pill">Signal Interfacing</span>
+                        <span class="project-pill">Hardware Testing</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 6. PERSONAL STRENGTHS: SYSTEM ATTRIBUTES MATRIX       -->
+        <!-- ===================================================== -->
+        <section id="strengths" aria-labelledby="strengths-heading">
+            <div class="section-editorial-header">
+                <span class="section-num">[ 05 // ATTRIBUTES ]</span>
+                <h2 id="strengths-heading" class="section-title">Core System Attributes</h2>
+                <p class="section-subtitle">Documented professional characteristics and work ethics.</p>
+            </div>
+
+            <div class="strengths-matrix">
+                <div class="strength-deck-card">
+                    <span class="strength-num">01</span>
+                    <h4>Quick Learner</h4>
+                    <p>Rapidly absorbs novel engineering concepts and adapts to evolving technical toolchains.</p>
+                </div>
+
+                <div class="strength-deck-card">
+                    <span class="strength-num">02</span>
+                    <h4>Hardworking &amp; Responsible</h4>
+                    <p>Demonstrates consistent accountability, rigorous attention to detail, and project ownership.</p>
+                </div>
+
+                <div class="strength-deck-card">
+                    <span class="strength-num">03</span>
+                    <h4>Tech Curiosity</h4>
+                    <p>Proactively explores emerging IoT innovations, embedded systems, and software libraries.</p>
+                </div>
+
+                <div class="strength-deck-card">
+                    <span class="strength-num">04</span>
+                    <h4>Team Collaboration</h4>
+                    <p>Effective communicator able to harmonize cross-discipline engineering efforts.</p>
+                </div>
+
+                <div class="strength-deck-card">
+                    <span class="strength-num">05</span>
+                    <h4>Growth Drive</h4>
+                    <p>Sustained commitment to expanding technical breadth, software expertise, and engineering execution.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- 7. CONTACT SECTION: TECHNICAL DISPATCH                -->
+        <!-- ===================================================== -->
+        <section id="contact" aria-labelledby="contact-heading">
+            <div class="section-editorial-header">
+                <span class="section-num">[ 06 // DISPATCH ]</span>
+                <h2 id="contact-heading" class="section-title">Technical Dispatch &amp; Inquiries</h2>
+                <p class="section-subtitle">Transmit inquiries regarding internship opportunities, technical collaborations, or projects.</p>
+            </div>
+
+            <div class="contact-dossier-card">
+                <!-- Left Details -->
+                <div class="contact-left">
+                    <h3>Initialize Connection</h3>
+                    <p>
+                        Available for internship opportunities, project collaborations, and technical discussions in IoT and electronics engineering.
+                    </p>
+
+                    <address class="contact-meta-list">
+                        <div class="contact-meta-item">
+                            <strong>Electronic Mail:</strong>
+                            <a href="mailto:sinchanravikumar82@gmail.com">sinchanravikumar82@gmail.com</a>
+                        </div>
+                        <div class="contact-meta-item">
+                            <strong>Telephone:</strong>
+                            <a href="tel:+918971715178">+91 8971715178</a>
+                        </div>
+                        <div class="contact-meta-item">
+                            <strong>Location:</strong>
+                            <span>Channagiri, Karnataka, India</span>
+                        </div>
+                    </address>
+                </div>
+
+                <!-- Right Form Block -->
+                <form id="contact-form" class="contact-form-editorial" action="#" method="POST">
+                    <div class="editorial-form-group">
+                        <label for="name">Identifier / Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Jane Doe">
+                    </div>
+
+                    <div class="editorial-form-group">
+                        <label for="email">Electronic Mail</label>
+                        <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                    </div>
+
+                    <div class="editorial-form-group">
+                        <label for="message">Transmission Message</label>
+                        <textarea id="message" name="message" rows="4" required placeholder="Transmit technical proposal or message..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-editorial btn-editorial-primary" style="align-self: flex-start;">
+                        Transmit Signal &rarr;
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================================= -->
+    <!-- BLUEPRINT FOOTER: REVISION NOTE                           -->
+    <!-- ========================================================= -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <p>DWG: SGR-2026-REV.C &bull; SINCHANA GR &bull; ELECTRONICS &amp; COMMUNICATION ENGINEERING</p>
+            <p><a href="#header" class="back-to-top">Return to Top &uarr;</a></p>
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- JAVASCRIPT CONTROLLERS                                    -->
+    <!-- ========================================================= -->
+    <script>
+        (function() {
+            /* 1. Responsive Schematic Navbar Drawer */
+            const navToggle = document.getElementById('mobile-nav-toggle');
+            const navDrawer = document.getElementById('vertical-nav-drawer');
+            const navClose = document.getElementById('vertical-nav-close');
+            const navBackdrop = document.getElementById('nav-backdrop');
+            const navLinks = navDrawer.querySelectorAll('.nav-links a');
+
+            function openVerticalNav() {
+                navDrawer.classList.add('active');
+                navBackdrop.classList.add('active');
+                navToggle.setAttribute('aria-expanded', 'true');
+                document.body.classList.add('vertical-nav-open');
+            }
+
+            function closeVerticalNav() {
+                navDrawer.classList.remove('active');
+                navBackdrop.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('vertical-nav-open');
+            }
+
+            if (navToggle) {
+                navToggle.addEventListener('click', function() {
+                    const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+                    if (isExpanded) {
+                        closeVerticalNav();
+                    } else {
+                        openVerticalNav();
+                    }
+                });
+            }
+
+            if (navClose) navClose.addEventListener('click', closeVerticalNav);
+            if (navBackdrop) navBackdrop.addEventListener('click', closeVerticalNav);
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', closeVerticalNav);
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navDrawer.classList.contains('active')) {
+                    closeVerticalNav();
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 992 && navDrawer.classList.contains('active')) {
+                    closeVerticalNav();
+                }
+            });
+
+            /* 2. Blueprint Theme Toggle (Cyanotype vs Diazo) */
+            const themeBtn = document.getElementById('theme-toggle');
+            const themeIcon = themeBtn.querySelector('.theme-icon');
+            const themeText = themeBtn.querySelector('.theme-text');
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+            function getActiveTheme() {
+                const manualTheme = document.documentElement.getAttribute('data-theme');
+                if (manualTheme) return manualTheme;
+                return mediaQuery.matches ? 'dark' : 'light';
+            }
+
+            function updateThemeUI(theme) {
+                const isDark = (theme === 'dark');
+                themeBtn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+                themeIcon.textContent = isDark ? '⚡' : '📐';
+                themeText.textContent = isDark ? 'Cyanotype' : 'Diazo Print';
+            }
+
+            themeBtn.addEventListener('click', function() {
+                const currentTheme = getActiveTheme();
+                const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', nextTheme);
+                localStorage.setItem('portfolio-theme', nextTheme);
+                updateThemeUI(nextTheme);
+            });
+
+            mediaQuery.addEventListener('change', function(e) {
+                if (!localStorage.getItem('portfolio-theme')) {
+                    updateThemeUI(e.matches ? 'dark' : 'light');
+                }
+            });
+
+            const savedTheme = localStorage.getItem('portfolio-theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                updateThemeUI(savedTheme);
+            } else {
+                updateThemeUI(mediaQuery.matches ? 'dark' : 'light');
+            }
+        })();
+    </script>
+</body>
+</html>

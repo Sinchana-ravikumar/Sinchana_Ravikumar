@@ -1,0 +1,1781 @@
+/* ==========================================================================
+   ENGINEERING BLUEPRINT DESIGN SYSTEM
+   Sinchana GR — Electronics & Communication Engineering Blueprint
+   ========================================================================== */
+
+/* Google Fonts: Rajdhani (Architectural/CAD Geometric Headers) & Share Tech Mono / Space Mono (Drafting Lettering) */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ==========================================================================
+   THEME PALETTES: CYANOTYPE (NIGHT) & DIAZO DRAFTING PAPER (DAY)
+   ========================================================================== */
+
+/* 1. DIAZO DRAFTING PAPER THEME (Day Mode / Technical Whiteprint) */
+:root {
+    --theme-name: "diazo-light";
+    
+    /* Backgrounds: Technical Engineering Millimeter Paper */
+    --bg-page: #edf3f8;
+    --bg-surface: #ffffff;
+    --bg-surface-alt: #e3ecf4;
+    --bg-card-layer-1: #d6e4f0;
+    --bg-card-layer-2: #c7dbe8;
+    --hero-overlay: rgba(237, 243, 248, 0.90);
+    
+    /* Blueprint Drafting Grid Lines */
+    --grid-major: rgba(10, 75, 120, 0.14);
+    --grid-minor: rgba(10, 75, 120, 0.05);
+    
+    /* Technical Drafting Inks */
+    --text-primary: #07253d;
+    --text-secondary: #274c6b;
+    --text-muted: #5a7b97;
+    --text-inverse: #ffffff;
+    
+    /* Blueprint Drafting Accents */
+    --blueprint-cyan: #0077b6;
+    --blueprint-glow: rgba(0, 119, 182, 0.25);
+    --blueprint-line: #0a4b78;
+    --accent-amber: #c57600;
+    --accent-teal: #009688;
+    --accent-red: #d90429;
+    
+    /* Borders & Technical Hairlines */
+    --border-hairline: rgba(10, 75, 120, 0.22);
+    --border-strong: #0a4b78;
+    --border-dashed: rgba(10, 75, 120, 0.45);
+    
+    /* Blueprint Shadows & Elevation */
+    --card-shadow: 0 10px 30px rgba(10, 75, 120, 0.08);
+    --card-shadow-hover: 0 16px 40px rgba(10, 75, 120, 0.16);
+    --layer-shadow: 0 8px 20px rgba(10, 75, 120, 0.06);
+    
+    /* Arch Backdrop & Photo Frame */
+    --arch-gradient: linear-gradient(160deg, #dbe8f3 0%, #c4d7e6 100%);
+    --photo-glow: 0 15px 35px rgba(10, 75, 120, 0.2);
+    
+    /* Nav & Controls */
+    --nav-bg: rgba(237, 243, 248, 0.95);
+    --drawer-bg: #edf3f8;
+    --backdrop-bg: rgba(7, 37, 61, 0.6);
+    
+    /* Technical Buttons */
+    --btn-primary-bg: #0a4b78;
+    --btn-primary-text: #ffffff;
+    --btn-secondary-bg: #ffffff;
+    --btn-secondary-text: #07253d;
+}
+
+/* 2. CYANOTYPE BLUEPRINT THEME (Night Mode / Classic Architectural Cyanotype) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --theme-name: "cyanotype-dark";
+        
+        /* Deep Naval Blueprint Blue */
+        --bg-page: #051324;
+        --bg-surface: #0a1f38;
+        --bg-surface-alt: #0d2847;
+        --bg-card-layer-1: #103157;
+        --bg-card-layer-2: #143b68;
+        --hero-overlay: rgba(5, 19, 36, 0.90);
+        
+        /* Electric Cyan Drafting Grid */
+        --grid-major: rgba(0, 229, 255, 0.18);
+        --grid-minor: rgba(0, 229, 255, 0.06);
+        
+        /* Luminescent Drafting Inks */
+        --text-primary: #e6f6ff;
+        --text-secondary: #90c2e7;
+        --text-muted: #5d8aa8;
+        --text-inverse: #051324;
+        
+        /* Cyan Blueprint Accents */
+        --blueprint-cyan: #00f0ff;
+        --blueprint-glow: rgba(0, 240, 255, 0.35);
+        --blueprint-line: #00e5ff;
+        --accent-amber: #ffd166;
+        --accent-teal: #06d6a0;
+        --accent-red: #ff3366;
+        
+        /* Technical Hairlines */
+        --border-hairline: rgba(0, 240, 255, 0.25);
+        --border-strong: #00e5ff;
+        --border-dashed: rgba(0, 240, 255, 0.45);
+        
+        /* Technical Shadows */
+        --card-shadow: 0 14px 40px rgba(0, 0, 0, 0.65), 0 0 1px rgba(0, 240, 255, 0.5);
+        --card-shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 240, 255, 0.4);
+        --layer-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        
+        /* Arch & Photo Glow */
+        --arch-gradient: linear-gradient(160deg, #103157 0%, #0a1f38 100%);
+        --photo-glow: 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 240, 255, 0.25);
+        
+        /* Nav & Controls */
+        --nav-bg: rgba(5, 19, 36, 0.96);
+        --drawer-bg: #07172c;
+        --backdrop-bg: rgba(0, 0, 0, 0.75);
+        
+        /* Technical Buttons */
+        --btn-primary-bg: #00f0ff;
+        --btn-primary-text: #051324;
+        --btn-secondary-bg: #0a1f38;
+        --btn-secondary-text: #00f0ff;
+    }
+}
+
+/* 3. MANUAL THEME OVERRIDES */
+[data-theme="light"] {
+    --bg-page: #edf3f8;
+    --bg-surface: #ffffff;
+    --bg-surface-alt: #e3ecf4;
+    --bg-card-layer-1: #d6e4f0;
+    --bg-card-layer-2: #c7dbe8;
+    --hero-overlay: rgba(237, 243, 248, 0.90);
+    --grid-major: rgba(10, 75, 120, 0.14);
+    --grid-minor: rgba(10, 75, 120, 0.05);
+    --text-primary: #07253d;
+    --text-secondary: #274c6b;
+    --text-muted: #5a7b97;
+    --text-inverse: #ffffff;
+    --blueprint-cyan: #0077b6;
+    --blueprint-glow: rgba(0, 119, 182, 0.25);
+    --blueprint-line: #0a4b78;
+    --accent-amber: #c57600;
+    --accent-teal: #009688;
+    --accent-red: #d90429;
+    --border-hairline: rgba(10, 75, 120, 0.22);
+    --border-strong: #0a4b78;
+    --border-dashed: rgba(10, 75, 120, 0.45);
+    --card-shadow: 0 10px 30px rgba(10, 75, 120, 0.08);
+    --card-shadow-hover: 0 16px 40px rgba(10, 75, 120, 0.16);
+    --layer-shadow: 0 8px 20px rgba(10, 75, 120, 0.06);
+    --arch-gradient: linear-gradient(160deg, #dbe8f3 0%, #c4d7e6 100%);
+    --photo-glow: 0 15px 35px rgba(10, 75, 120, 0.2);
+    --nav-bg: rgba(237, 243, 248, 0.95);
+    --drawer-bg: #edf3f8;
+    --backdrop-bg: rgba(7, 37, 61, 0.6);
+    --btn-primary-bg: #0a4b78;
+    --btn-primary-text: #ffffff;
+    --btn-secondary-bg: #ffffff;
+    --btn-secondary-text: #07253d;
+}
+
+[data-theme="dark"] {
+    --bg-page: #051324;
+    --bg-surface: #0a1f38;
+    --bg-surface-alt: #0d2847;
+    --bg-card-layer-1: #103157;
+    --bg-card-layer-2: #143b68;
+    --hero-overlay: rgba(5, 19, 36, 0.90);
+    --grid-major: rgba(0, 229, 255, 0.18);
+    --grid-minor: rgba(0, 229, 255, 0.06);
+    --text-primary: #e6f6ff;
+    --text-secondary: #90c2e7;
+    --text-muted: #5d8aa8;
+    --text-inverse: #051324;
+    --blueprint-cyan: #00f0ff;
+    --blueprint-glow: rgba(0, 240, 255, 0.35);
+    --blueprint-line: #00e5ff;
+    --accent-amber: #ffd166;
+    --accent-teal: #06d6a0;
+    --accent-red: #ff3366;
+    --border-hairline: rgba(0, 240, 255, 0.25);
+    --border-strong: #00e5ff;
+    --border-dashed: rgba(0, 240, 255, 0.45);
+    --card-shadow: 0 14px 40px rgba(0, 0, 0, 0.65), 0 0 1px rgba(0, 240, 255, 0.5);
+    --card-shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 240, 255, 0.4);
+    --layer-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --arch-gradient: linear-gradient(160deg, #103157 0%, #0a1f38 100%);
+    --photo-glow: 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 15px rgba(0, 240, 255, 0.25);
+    --nav-bg: rgba(5, 19, 36, 0.96);
+    --drawer-bg: #07172c;
+    --backdrop-bg: rgba(0, 0, 0, 0.75);
+    --btn-primary-bg: #00f0ff;
+    --btn-primary-text: #051324;
+    --btn-secondary-bg: #0a1f38;
+    --btn-secondary-text: #00f0ff;
+}
+
+/* ==========================================================================
+   GLOBAL RESET & BLUEPRINT DRAFTING CANVAS
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Share Tech Mono', 'Space Mono', monospace;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+
+    /* Technical Isometric/Orthogonal Blueprint Graph Paper Grid */
+    background-image: 
+        linear-gradient(var(--grid-major) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+        linear-gradient(var(--grid-minor) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-minor) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+}
+
+body.vertical-nav-open {
+    overflow: hidden;
+}
+
+/* CAD & Technical Drafting Typography */
+h1, h2, h3, h4 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-primary);
+}
+
+.mono-meta, .bp-spec, .bp-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--blueprint-cyan);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Technical Dimension Callouts */
+.dim-mark {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--blueprint-cyan);
+    letter-spacing: 0.1em;
+    user-select: none;
+}
+
+/* ==========================================================================
+   HEADER & BLUEPRINT TITLE BLOCK
+   ========================================================================== */
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--border-strong);
+    width: 100%;
+}
+
+/* Engineering Schematic Top Ticker Bar */
+.masthead-topbar {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 6px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed var(--border-dashed);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.masthead-topbar span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.masthead-topbar strong {
+    color: var(--blueprint-cyan);
+}
+
+/* Main Navigation Bar */
+#header nav {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    position: relative;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-crosshair {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--blueprint-cyan);
+    color: var(--blueprint-cyan);
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.logo-brand {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.logo-edition {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.68rem;
+    padding: 2px 6px;
+    border: 1px solid var(--border-hairline);
+    color: var(--blueprint-cyan);
+    background: var(--bg-surface-alt);
+    white-space: nowrap;
+}
+
+/* Header Controls Right */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Theme Toggle Button: Schematic Toggle */
+.blueprint-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 8px 16px;
+    background: var(--bg-surface-alt);
+    color: var(--text-primary);
+    border: 1px solid var(--border-strong);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+    box-shadow: 2px 2px 0 var(--border-strong);
+}
+
+.blueprint-toggle-btn:hover {
+    border-color: var(--blueprint-cyan);
+    box-shadow: 3px 3px 0 var(--blueprint-cyan);
+    transform: translate(-1px, -1px);
+}
+
+/* Hamburger Toggle Button */
+.mobile-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-strong);
+    cursor: pointer;
+    box-shadow: 2px 2px 0 var(--border-strong);
+}
+
+.hamburger-line {
+    width: 24px;
+    height: 2px;
+    background-color: var(--blueprint-cyan);
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Backdrop */
+.nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: var(--backdrop-bg);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    z-index: 998;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.nav-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ==========================================================================
+   DESKTOP NAVBAR (min-width: 992px)
+   ========================================================================== */
+@media (min-width: 992px) {
+    .vertical-nav-drawer {
+        display: flex;
+        align-items: center;
+    }
+
+    .vertical-nav-header,
+    .vertical-nav-footer {
+        display: none !important;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .nav-links li a {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        position: relative;
+        padding: 6px 4px;
+        display: inline-flex;
+        align-items: baseline;
+        gap: 6px;
+    }
+
+    .nav-idx {
+        font-size: 0.7rem;
+        color: var(--blueprint-cyan);
+    }
+
+    .nav-links li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--blueprint-cyan);
+        transition: width 0.25s ease;
+    }
+
+    .nav-links li a:hover {
+        color: var(--blueprint-cyan);
+    }
+
+    .nav-links li a:hover::after {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   TABLET & MOBILE VERTICAL NAVBAR DRAWER (max-width: 991px)
+   ========================================================================== */
+@media (max-width: 991px) {
+    .mobile-nav-toggle {
+        display: flex;
+    }
+
+    .vertical-nav-drawer {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(340px, 86vw);
+        height: 100vh;
+        background: var(--drawer-bg);
+        border-left: 2px solid var(--border-strong);
+        box-shadow: -15px 0 45px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 32px 24px;
+        transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        overflow-y: auto;
+    }
+
+    .vertical-nav-drawer.active {
+        right: 0;
+    }
+
+    .vertical-nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid var(--border-strong);
+        padding-bottom: 16px;
+        margin-bottom: 24px;
+    }
+
+    .vertical-nav-close-btn {
+        background: transparent;
+        border: 1px solid var(--border-hairline);
+        color: var(--blueprint-cyan);
+        font-size: 1.6rem;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+    }
+
+    .vertical-nav-close-btn:hover {
+        background: var(--blueprint-cyan);
+        color: var(--bg-page);
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .nav-links li a {
+        font-family: 'Rajdhani', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--text-primary);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 0;
+        border-bottom: 1px dashed var(--border-dashed);
+        transition: all 0.2s ease;
+    }
+
+    .nav-idx {
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.78rem;
+        color: var(--blueprint-cyan);
+        min-width: 28px;
+    }
+
+    .nav-links li a:hover {
+        color: var(--blueprint-cyan);
+        padding-left: 8px;
+    }
+
+    .vertical-nav-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        border-top: 1px solid var(--border-hairline);
+        padding-top: 20px;
+        margin-top: 24px;
+    }
+
+    .vertical-nav-loc {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+    }
+}
+
+/* ==========================================================================
+   HERO SECTION: SCHEMATIC SPECIFICATION & POP-OUT PHOTO
+   ========================================================================== */
+#hero {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 24px 90px;
+    background-image: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url('hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    border-bottom: 2px solid var(--border-strong);
+    width: 100%;
+}
+
+/* Technical Corner Markings on Section */
+#hero::before {
+    content: "DWG: SGR-HERO-01 // SCALE: 1:1";
+    position: absolute;
+    bottom: 12px;
+    right: 24px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+.hero-editorial-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 50px;
+}
+
+/* LEFT COLUMN: TECHNICAL SPECIFICATION BLOCK */
+.hero-content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Engineering Schematic Stamp Badge */
+.bp-stamp-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--border-strong);
+    padding: 6px 14px;
+    background: var(--bg-surface-alt);
+    width: fit-content;
+    box-shadow: 2px 2px 0 var(--border-strong);
+}
+
+.bp-stamp-code {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--blueprint-cyan);
+    font-weight: 700;
+}
+
+.bp-stamp-status {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.68rem;
+    padding: 2px 6px;
+    background: var(--blueprint-cyan);
+    color: var(--bg-page);
+    font-weight: 700;
+}
+
+.hero-main-title {
+    font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+    line-height: 1.05;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.04em;
+}
+
+.hero-main-title .name-highlight {
+    display: block;
+    color: var(--blueprint-cyan);
+    font-weight: 700;
+    text-shadow: 0 0 20px var(--blueprint-glow);
+}
+
+.hero-editorial-tagline {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    border-left: 3px solid var(--blueprint-cyan);
+    padding-left: 16px;
+    margin: 4px 0;
+    text-transform: uppercase;
+}
+
+.hero-editorial-bio {
+    font-size: clamp(0.95rem, 1.8vw, 1.02rem);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 580px;
+}
+
+/* Engineering Title Block / Specification Matrix */
+.bp-title-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--border-strong);
+    background: var(--bg-surface);
+    box-shadow: 3px 3px 0 var(--border-strong);
+    margin: 6px 0;
+}
+
+.bp-tb-cell {
+    padding: 10px 14px;
+    border-right: 1px solid var(--border-hairline);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.bp-tb-cell:last-child {
+    border-right: none;
+}
+
+.bp-tb-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+}
+
+.bp-tb-val {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+}
+
+/* Action Buttons: CAD Blueprint Technical Buttons */
+.hero-action-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.btn-editorial {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 14px 26px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    min-height: 48px;
+    white-space: nowrap;
+    position: relative;
+    border: 2px solid var(--border-strong);
+    box-shadow: 4px 4px 0 var(--border-strong);
+}
+
+.btn-editorial-primary {
+    background: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+}
+
+.btn-editorial-primary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--blueprint-cyan);
+    border-color: var(--blueprint-cyan);
+}
+
+.btn-editorial-secondary {
+    background: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+}
+
+.btn-editorial-secondary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--blueprint-cyan);
+    color: var(--blueprint-cyan);
+    border-color: var(--blueprint-cyan);
+}
+
+.btn-editorial-outline {
+    background: var(--bg-surface-alt);
+    color: var(--text-primary);
+}
+
+.btn-editorial-outline:hover {
+    border-color: var(--blueprint-cyan);
+    color: var(--blueprint-cyan);
+    box-shadow: 6px 6px 0 var(--blueprint-cyan);
+}
+
+/* ==========================================================================
+   POP-OUT PHOTO + TECHNICAL DRAFTING SCHEMATIC STAGE
+   ========================================================================== */
+.hero-photo-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.layered-popout-stage {
+    position: relative;
+    width: 350px;
+    max-width: 100%;
+    height: 480px;
+    perspective: 1200px;
+    margin: 30px auto 10px;
+}
+
+/* Layer 1: Base Blueprint Drafting Sheet (Tilted) */
+.card-layer-back {
+    position: absolute;
+    inset: 0;
+    background: var(--bg-card-layer-2);
+    border: 1px dashed var(--border-dashed);
+    transform: rotate(-4deg) translate(-12px, 14px);
+    box-shadow: var(--layer-shadow);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+/* Layer 2: Intermediate Circuit Schematic Overlay */
+.card-layer-middle {
+    position: absolute;
+    inset: 0;
+    background: var(--bg-card-layer-1);
+    border: 1px solid var(--border-strong);
+    transform: rotate(3deg) translate(10px, -6px);
+    box-shadow: var(--layer-shadow);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 2;
+}
+
+/* Layer 3: Main Front Drafting Spec Board */
+.card-layer-front {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-surface);
+    border: 2px solid var(--border-strong);
+    box-shadow: var(--card-shadow);
+    overflow: visible; /* Allows head to pop out! */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    z-index: 3;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+
+/* Pop-out Photo Container */
+.popout-photo-wrapper {
+    position: absolute;
+    top: -65px; /* Pops out 65px above front card */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 285px;
+    height: 385px;
+    pointer-events: none;
+}
+
+/* Architectural CAD Arch Frame */
+.popout-arch-frame {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 245px;
+    height: 310px;
+    border-radius: 125px 125px 0 0;
+    background: var(--arch-gradient);
+    border: 2px solid var(--blueprint-cyan);
+    box-shadow: inset 0 0 30px var(--blueprint-glow);
+}
+
+/* Pop-out Subject Portrait */
+.popout-subject-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    height: 375px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 125px 125px 0 0;
+    filter: drop-shadow(var(--photo-glow));
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: auto;
+}
+
+/* Front Card Technical Schematic Panel */
+.front-card-details {
+    position: relative;
+    z-index: 5;
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-strong);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 2px 2px 0 var(--border-strong);
+}
+
+.card-subject-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-primary);
+}
+
+.card-subject-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.card-spec-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.card-spec-pill {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-hairline);
+    color: var(--blueprint-cyan);
+}
+
+/* Floating Technical Badges */
+.floating-badge {
+    position: absolute;
+    z-index: 6;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    padding: 6px 14px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.4s ease;
+    white-space: nowrap;
+    box-shadow: 3px 3px 0 var(--border-strong);
+}
+
+.badge-top-left {
+    top: -18px;
+    left: -18px;
+    color: var(--blueprint-cyan);
+}
+
+.badge-bottom-right {
+    bottom: -15px;
+    right: -15px;
+    background: var(--blueprint-cyan);
+    color: var(--bg-page);
+    font-weight: 700;
+}
+
+/* Hover Motion on Desktop */
+@media (hover: hover) and (pointer: fine) {
+    .layered-popout-stage:hover .card-layer-front {
+        transform: translateY(-8px);
+        box-shadow: var(--card-shadow-hover);
+    }
+
+    .layered-popout-stage:hover .card-layer-back {
+        transform: rotate(-6deg) translate(-18px, 20px);
+    }
+
+    .layered-popout-stage:hover .card-layer-middle {
+        transform: rotate(5deg) translate(16px, -12px);
+    }
+
+    .layered-popout-stage:hover .popout-subject-image {
+        transform: translateX(-50%) translateY(-14px) scale(1.03);
+    }
+
+    .layered-popout-stage:hover .badge-top-left {
+        transform: translate(-4px, -4px);
+    }
+
+    .layered-popout-stage:hover .badge-bottom-right {
+        transform: translate(4px, 4px);
+    }
+}
+
+/* ==========================================================================
+   SECTIONS & BLUEPRINT SCHEMATIC GRIDS
+   ========================================================================== */
+main section {
+    max-width: 1300px;
+    margin: 90px auto;
+    padding: 0 32px;
+    width: 100%;
+}
+
+.section-editorial-header {
+    margin-bottom: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 2px solid var(--border-strong);
+    padding-bottom: 16px;
+    position: relative;
+}
+
+.section-editorial-header::after {
+    content: "SECTION // SCHEMATIC";
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    background: var(--bg-page);
+    padding: 0 8px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--blueprint-cyan);
+}
+
+.section-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--blueprint-cyan);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: clamp(2rem, 3.8vw, 2.8rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+}
+
+.section-subtitle {
+    font-size: clamp(0.92rem, 2vw, 1.05rem);
+    color: var(--text-secondary);
+}
+
+/* 1. About Grid: Blueprint Spec Sheet */
+.about-editorial-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.editorial-card-layered {
+    position: relative;
+    background: var(--bg-surface);
+    border: 2px solid var(--border-strong);
+    padding: 36px;
+    box-shadow: 4px 4px 0 var(--border-strong);
+}
+
+.editorial-card-layered::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--bg-card-layer-1);
+    border: 1px dashed var(--border-dashed);
+    transform: rotate(-1.5deg) translate(-8px, 8px);
+    z-index: -1;
+}
+
+.editorial-card-layered h3 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-hairline);
+    padding-bottom: 8px;
+}
+
+.editorial-card-layered p {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.about-side-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.side-card {
+    background: var(--bg-surface-alt);
+    border: 2px solid var(--border-strong);
+    padding: 24px;
+    box-shadow: 3px 3px 0 var(--border-strong);
+}
+
+.side-card h4 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--border-hairline);
+    padding-bottom: 6px;
+}
+
+.side-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side-card li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.side-card li::before {
+    content: "▶";
+    color: var(--blueprint-cyan);
+    font-size: 0.75rem;
+}
+
+/* 2. Technical Skills Grid: PCB & Schematic Index Cards */
+.skills-editorial-deck {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+}
+
+.skill-card-deck {
+    position: relative;
+    background: var(--bg-surface);
+    border: 2px solid var(--border-strong);
+    padding: 32px;
+    box-shadow: 4px 4px 0 var(--border-strong);
+    transition: transform 0.3s ease;
+}
+
+.skill-card-deck::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--bg-card-layer-1);
+    border: 1px dashed var(--border-dashed);
+    transform: rotate(2deg) translate(6px, 6px);
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.skill-card-deck:hover {
+    transform: translateY(-4px);
+}
+
+.skill-deck-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--blueprint-cyan);
+    margin-bottom: 10px;
+    display: block;
+    letter-spacing: 0.1em;
+}
+
+.skill-card-deck h3 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    border-bottom: 2px solid var(--border-strong);
+    padding-bottom: 10px;
+}
+
+.skill-list-editorial {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skill-list-editorial li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--border-hairline);
+}
+
+.skill-list-editorial li strong {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--blueprint-cyan);
+}
+
+/* 3. Chronology / Education Deck: Technical Log Cards */
+.timeline-deck-container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.timeline-deck-card {
+    position: relative;
+    background: var(--bg-surface);
+    border: 2px solid var(--border-strong);
+    padding: 28px 32px;
+    box-shadow: 4px 4px 0 var(--border-strong);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 28px;
+    transition: transform 0.3s ease;
+}
+
+.timeline-deck-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--bg-card-layer-1);
+    border: 1px dashed var(--border-dashed);
+    transform: translate(-6px, 6px);
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.timeline-deck-card:hover {
+    transform: translateY(-3px);
+}
+
+.timeline-index-badge {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--blueprint-cyan);
+    line-height: 1;
+    border: 1px solid var(--blueprint-cyan);
+    padding: 4px 10px;
+    background: var(--bg-surface-alt);
+}
+
+.timeline-content-body h3 {
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+}
+
+.timeline-institution {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.timeline-score-stamp {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    background: var(--bg-surface-alt);
+    color: var(--blueprint-cyan);
+    border: 2px solid var(--border-strong);
+    text-align: center;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 2px 2px 0 var(--border-strong);
+}
+
+/* 4. Projects Grid: Engineered Schematics */
+.projects-editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.project-card-editorial {
+    position: relative;
+    background: var(--bg-surface);
+    border: 2px solid var(--border-strong);
+    padding: 34px;
+    box-shadow: 4px 4px 0 var(--border-strong);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 22px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card-editorial::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--bg-card-layer-2);
+    border: 1px dashed var(--border-dashed);
+    transform: rotate(-2deg) translate(-10px, 10px);
+    z-index: -2;
+    transition: transform 0.4s ease;
+}
+
+.project-card-editorial::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--bg-card-layer-1);
+    border: 1px solid var(--border-strong);
+    transform: rotate(1.5deg) translate(8px, -6px);
+    z-index: -1;
+    transition: transform 0.4s ease;
+}
+
+.project-card-editorial:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.project-card-header .project-kicker {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--blueprint-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.project-card-header h3 {
+    font-size: 1.65rem;
+    line-height: 1.25;
+}
+
+.project-bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-bullet-list li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding-left: 20px;
+    position: relative;
+}
+
+.project-bullet-list li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    color: var(--blueprint-cyan);
+    font-size: 0.8rem;
+    top: 2px;
+}
+
+.project-pill-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px dashed var(--border-hairline);
+    padding-top: 16px;
+}
+
+.project-pill {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.68rem;
+    padding: 4px 10px;
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-hairline);
+    color: var(--text-primary);
+}
+
+/* 5. Strengths Matrix: Technical Specs */
+.strengths-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 24px;
+}
+
+.strength-deck-card {
+    background: var(--bg-surface);
+    border: 2px solid var(--border-strong);
+    padding: 24px 20px;
+    box-shadow: 3px 3px 0 var(--border-strong);
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.strength-deck-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--blueprint-cyan);
+}
+
+.strength-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--blueprint-cyan);
+    margin-bottom: 6px;
+    display: block;
+}
+
+.strength-deck-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.strength-deck-card p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+/* 6. Contact Grid: Technical Dispatch Dossier */
+.contact-dossier-card {
+    position: relative;
+    background: var(--bg-surface);
+    border: 2px solid var(--border-strong);
+    padding: 44px;
+    box-shadow: 4px 4px 0 var(--border-strong);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.contact-dossier-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--bg-card-layer-1);
+    border: 1px dashed var(--border-dashed);
+    transform: rotate(-1deg) translate(-8px, 8px);
+    z-index: -1;
+}
+
+.contact-left h3 {
+    font-size: 2rem;
+    margin-bottom: 14px;
+}
+
+.contact-left p {
+    font-size: 1.02rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.contact-meta-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-style: normal;
+}
+
+.contact-meta-item {
+    font-size: 0.95rem;
+}
+
+.contact-meta-item strong {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    display: block;
+    color: var(--blueprint-cyan);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.contact-form-editorial {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.editorial-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.editorial-form-group label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.editorial-form-group input,
+.editorial-form-group textarea {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    border: 1px solid var(--border-strong);
+    background: var(--bg-surface-alt);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    min-height: 48px;
+}
+
+.editorial-form-group textarea {
+    min-height: 120px;
+}
+
+.editorial-form-group input:focus,
+.editorial-form-group textarea:focus {
+    border-color: var(--blueprint-cyan);
+    box-shadow: 0 0 0 2px var(--blueprint-glow);
+}
+
+/* Footer: Blueprint Technical Revision Footnote */
+#footer {
+    border-top: 2px solid var(--border-strong);
+    background: var(--bg-surface);
+    padding: 36px 24px;
+    margin-top: 90px;
+}
+
+.footer-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.back-to-top {
+    color: var(--blueprint-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.back-to-top:hover {
+    text-decoration: underline;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLETS & MOBILE)
+   ========================================================================== */
+@media (max-width: 991px) {
+    #header nav {
+        padding: 12px 20px;
+    }
+
+    #hero {
+        padding: 50px 20px 70px;
+        background-attachment: scroll;
+    }
+
+    .hero-editorial-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-content-column {
+        align-items: center;
+    }
+
+    .bp-stamp-box {
+        margin: 0 auto;
+    }
+
+    .hero-editorial-tagline {
+        border-left: none;
+        border-top: 2px solid var(--blueprint-cyan);
+        border-bottom: 2px solid var(--blueprint-cyan);
+        padding: 10px 0;
+        margin: 6px auto;
+    }
+
+    .bp-title-block {
+        width: 100%;
+        max-width: 500px;
+        margin: 6px auto;
+    }
+
+    .hero-action-row {
+        justify-content: center;
+    }
+
+    .layered-popout-stage {
+        width: 320px;
+        height: 440px;
+        margin: 15px auto;
+    }
+
+    .popout-photo-wrapper {
+        top: -55px;
+        width: 260px;
+        height: 350px;
+    }
+
+    .popout-arch-frame {
+        width: 220px;
+        height: 280px;
+    }
+
+    .popout-subject-image {
+        width: 235px;
+        height: 340px;
+    }
+
+    main section {
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+
+    .about-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .skills-editorial-deck {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .projects-editorial-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+
+    .contact-dossier-card {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px;
+    }
+}
+
+@media (max-width: 767px) {
+    .masthead-topbar span:nth-child(2) {
+        display: none;
+    }
+
+    .bp-title-block {
+        grid-template-columns: 1fr;
+    }
+
+    .bp-tb-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .bp-tb-cell:last-child {
+        border-bottom: none;
+    }
+
+    .hero-action-row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-editorial {
+        width: 100%;
+    }
+
+    .layered-popout-stage {
+        width: min(290px, 86vw);
+        height: 410px;
+    }
+
+    .card-layer-back {
+        transform: rotate(-2deg) translate(-6px, 8px);
+    }
+
+    .card-layer-middle {
+        transform: rotate(2deg) translate(6px, -4px);
+    }
+
+    .popout-photo-wrapper {
+        top: -45px;
+        width: 240px;
+        height: 330px;
+    }
+
+    .popout-arch-frame {
+        width: 205px;
+        height: 260px;
+    }
+
+    .popout-subject-image {
+        width: 220px;
+        height: 320px;
+    }
+
+    .skills-editorial-deck {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-deck-card {
+        grid-template-columns: 1fr;
+        padding: 22px 18px;
+        gap: 14px;
+    }
+
+    .projects-editorial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card-editorial {
+        padding: 24px 18px;
+    }
+
+    .strengths-matrix {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-dossier-card {
+        padding: 24px 18px;
+    }
+
+    #footer {
+        padding: 28px 16px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
